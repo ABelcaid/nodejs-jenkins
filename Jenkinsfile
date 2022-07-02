@@ -1,15 +1,16 @@
 pipeline {
-    agent any
+  agent any
+    
+  tools {nodejs 'nodejs 18.4.0'}
+    
+  stages {
 
-    environment {
-        CI = 'true'
-    }
-    stages {
-        stage('Build') {
-            steps {
-                echo 'building the software'
-                sh 'npm install'
-            }
-        }
-    }
+    stage('Build') {
+      steps {
+        echo 'building the software'
+        sh 'npm version'
+      }
+    }  
+    
+  }
 }
