@@ -1,3 +1,11 @@
-FROM node:18-alpine3.15
-
-RUN apk add -U git 
+pipeline {
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+                sh 'svn --version'
+            }
+        }
+    }
+}
