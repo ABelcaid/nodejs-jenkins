@@ -8,7 +8,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'building the software'
-        sh 'npm version'
+        echo 'building the software v2'
+        sh 'npm i'
       }
     }  
     
